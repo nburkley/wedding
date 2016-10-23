@@ -1,8 +1,16 @@
-.header-1 h1 {
+.overlay-header.overlay-header {
   filter: drop-shadow(-2px -2px 5px black);
   font-weight: 300;
 }
 
 .sub-header {
   font-size: 14px
- }
+}
+
+.blockquote blockquote {
+  padding-bottom: 0;
+}
+
+.weekend-plan-header {
+  margin-bottom: 20px;
+}
