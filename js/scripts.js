@@ -29,6 +29,11 @@ $(document).ready(function() {
 
     $('.mobile-toggle').click(function() {
         $('nav').toggleClass('nav-open');
+
+        // if we're at the top of the page toggle the scrooled nav class for readablitiy
+        if ($(window).scrollTop() === 0) {
+          $('nav').toggleClass('scrolled');
+        }
     });
 
     $('.menu li a').click(function() {
