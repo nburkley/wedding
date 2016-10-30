@@ -1287,7 +1287,7 @@ input[type="submit"]:focus {
   margin: 0 auto;
   display: inline-block;
 }
-.rsvp form input[type="text"] {
+.rsvp form input[type="text"], .rsvp form input[type="email"] {
   height: 55px;
   background: #fcfcfc;
   border: 1px solid #d6d6d6;
@@ -1302,7 +1302,7 @@ input[type="submit"]:focus {
   margin-right: -2px;
   font-family: 'Lato';
 }
-.rsvp form input[type="text"]:focus {
+.rsvp form input[type="text"]:focus, .rsvp form input[type="email"]:focus {
   outline: none;
 }
 .rsvp form input[type="submit"] {
@@ -1336,7 +1336,7 @@ input[type="submit"]:focus {
 .rsvp-1 p:last-of-type {
   margin-bottom: 60px;
 }
-.rsvp-1 form input[type="text"] {
+.rsvp-1 form input[type="text"], .rsvp form input[type="email"] {
   margin-bottom: 5px;
 }
 .rsvp-2 h1 {
