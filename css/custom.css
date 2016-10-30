@@ -42,7 +42,7 @@ h2 {
 }
 
 .rsvp textarea {
-  height: 350px;
+  height: 250px;
   background: #fcfcfc;
   border: 1px solid #d6d6d6;
   width: 100%;
@@ -63,3 +63,10 @@ h2 {
   display: block;
 }
 
+.form-wrapper.form-wrapper {
+  padding-top: 10px;
+}
+
+.form-error, .form-success {
+  bottom: -15%;
+}
