@@ -176,8 +176,8 @@ $(document).ready(function() {
             $(this).closest('form').find('.form-error').fadeOut(200);
             // Create a new loading spinner while hiding the submit button.
             loadingSpinner = jQuery('<div />').addClass('form-loading').insertAfter($(thisForm).find('input[type="submit"]'));
+            $(thisForm).submit();
             $(thisForm).find('input[type="submit"]').hide();
-
             $(thisForm).find('.form-success').fadeIn(1000);
             $(thisForm).find('.form-error').fadeOut(1000);
             $(thisForm).find('.form-loading').remove();
@@ -185,7 +185,6 @@ $(document).ready(function() {
             setTimeout(function() {
                 thisForm.find('.form-success').fadeOut(500);
             }, 5000);
-
         }
         return false;
     });
