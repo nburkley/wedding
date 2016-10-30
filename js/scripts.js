@@ -146,47 +146,29 @@ $(document).ready(function() {
     });
 
     // Contact form code
-
     $('form.form-email').submit(function(e) {
+        e.preventDefault();
+        var error, $form = $(this);
 
-        // return false so form submits through jQuery rather than reloading page.
-        if (e.preventDefault) e.preventDefault();
-        else e.returnValue = false;
-
-        var thisForm = $(this).closest('form.form-email'),
-            error = 0,
-            originalError = thisForm.attr('original-error'),
-            loadingSpinner, userEmail, userFullName, userFirstName, userLastName;
-
-
-
-        if (typeof originalError !== typeof undefined && originalError !== false) {
-            thisForm.find('.form-error').text(originalError);
-        }
-
-        error = validateFields(thisForm);
+        error = validateFields($form);
 
         if (error === 1) {
             $(this).closest('form').find('.form-error').fadeIn(200);
             setTimeout(function() {
-                $(thisForm).find('.form-error').fadeOut(500);
+                $form.find('.form-error').fadeOut(500);
             }, 3000);
         } else {
-            // Hide the error if one was shown
-            $(this).closest('form').find('.form-error').fadeOut(200);
-            // Create a new loading spinner while hiding the submit button.
-            loadingSpinner = jQuery('<div />').addClass('form-loading').insertAfter($(thisForm).find('input[type="submit"]'));
-            $(thisForm).submit();
-            $(thisForm).find('input[type="submit"]').hide();
-            $(thisForm).find('.form-success').fadeIn(1000);
-            $(thisForm).find('.form-error').fadeOut(1000);
-            $(thisForm).find('.form-loading').remove();
-            $(thisForm).find('input[type="submit"]').show();
-            setTimeout(function() {
-                thisForm.find('.form-success').fadeOut(500);
-            }, 5000);
+            $.post($form.attr("action"), $form.serialize()).then(function() {
+                $form.find('input[type="submit"]').hide();
+                $form.find('.form-success').fadeIn(1000);
+                $form.find('.form-error').fadeOut(1000);
+                $form.find('.form-loading').remove();
+                $form.find('input[type="submit"]').show();
+                setTimeout(function() {
+                    $form.find('.form-success').fadeOut(500);
+                }, 5000);
+            });
         }
-        return false;
     });
 
     $('.validate-required, .validate-email').on('blur change', function() {
