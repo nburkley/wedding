@@ -21,7 +21,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-.list h5 {
+.info-list h5 {
   margin: 20px 0 5px 0;
 }
 
@@ -37,6 +37,29 @@ h2 {
   padding-bottom: 20px;
 }
 
-.weekend-plan-header {
+.things-to-do-header {
   margin: 30px 0 10px 0;
 }
+
+.rsvp textarea {
+  height: 350px;
+  background: #fcfcfc;
+  border: 1px solid #d6d6d6;
+  width: 100%;
+  padding: 15px;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-right: -2px;
+  font-family: 'Lato';
+}
+.rsvp textarea:focus {
+  outline: none;
+}
+
+.rsvp form {
+  margin: 0 auto;
+  display: block;
+}
+
