@@ -153,7 +153,7 @@ $(document).ready(function() {
         error = validateFields($form);
 
         if (error === 1) {
-            $(this).closest('form').find('.form-error').fadeIn(200);
+            $form.closest('form').find('.form-error').fadeIn(200);
             setTimeout(function() {
                 $form.find('.form-error').fadeOut(500);
             }, 3000);
@@ -164,9 +164,14 @@ $(document).ready(function() {
                 $form.find('.form-error').fadeOut(1000);
                 $form.find('.form-loading').remove();
                 $form.find('input[type="submit"]').show();
+
+                // reset form fields
+                $form.closest('form').find("input[type=text], textarea, input[type=email]").val("");
+
                 setTimeout(function() {
                     $form.find('.form-success').fadeOut(500);
                 }, 5000);
+
             });
         }
     });
