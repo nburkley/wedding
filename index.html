@@ -279,23 +279,30 @@
           <div class="row">
             <div class="col-sm-12 text-center">
               <div class="form-wrapper">
-                <form class="form-email" name="rsvp" netlify>
+                <form class="form-email" name="contact-form" netlify>
                   <div class="form-section">
-                    <input type="text" name="name" class="validate-required" placeholder="Your Name / Names">
-                    <input type="email" name="email" class="validate-required" placeholder="Email address">
-                    <textarea name="comments" class="validate-required" placeholder="Anythign to say? Dietary requirements, special requests etc…"></textarea>
-                    <div class="radio-group">
+                    <label class="hidden" for="name">Your Name</label>
+                    <input type="text" name="name" id="name" class="validate-required" placeholder="Your Name / Names">
+                    <label class="hidden" for="email">Email</label>
+                    <input type="email" name="email" id="email" class="validate-required" placeholder="Email address">
+                    <label class="hidden" for="comments">Comments</label>
+                    <textarea name="comments" id="comments" class="validate-required" placeholder="Anythign to say? Dietary requirements, special requests etc…"></textarea>
+                    <label class="hidden" for="contact-reason">Subject</label>
+                    <div class="radio-group" id="contact-reason">
                       <div class="radio-holder naked checked">
                         <span>Can't Wait</span>
-                        <input type="radio" name="rsvp" value="attending" checked="checked">
+                        <label class="hidden" for="attending">Subject</label>
+                        <input type="radio" name="rsvp" id="attending" value="attending" checked="checked">
                       </div>
                       <div class="radio-holder naked">
                         <span>Can't Come</span>
-                        <input type="radio" name="rsvp" value="not-attending">
+                        <label class="hidden" for="not-attending">Subject</label>
+                        <input type="radio" name="rsvp" id="not-attending" value="not-attending">
                       </div>
                       <div class="radio-holder naked">
                         <span>Just saying hi</span>
-                        <input type="radio" name="rsvp" value="not-attending">
+                        <label class="hidden" for="saying-hi">Subject</label>
+                        <input type="radio" name="rsvp" id="saying-hi" value="saying-hi">
                       </div>
                     </div>
                   </div>
