@@ -140,11 +140,6 @@ $(document).ready(function() {
         $(this).attr('value', convertToSlug(valueText));
     });
 
-    $('form input[type="text"]').each(function() {
-        var attrText = $(this).attr('placeholder');
-        $(this).attr('name', convertToSlug(attrText));
-    });
-
     // Contact form code
     $('form.form-email').submit(function(e) {
         e.preventDefault();
