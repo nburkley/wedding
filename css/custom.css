@@ -70,3 +70,14 @@ h2 {
 .form-error, .form-success {
   bottom: -15%;
 }
+
+.imagedropshadow {
+  margin: 25px 0;
+  padding: 5px;
+  border: solid 1px #EFEFEF;
+  box-shadow: 1px 1px 5px #999;
+}
+
+a:hover img.imagedropshadow {
+  border: solid 1px #CCC;
+}
